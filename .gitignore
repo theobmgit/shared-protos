@@ -1,0 +1,16 @@
+gen/
+generated/
+*_pb.*
+*.pb.go
+*_grpc.pb.go
+
+.idea/
+.vscode/
+.cursor/
+*.swp
+
+.DS_Store
+Thumbs.db
+
+node_modules/
+vendor/

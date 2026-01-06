@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package expense.v1;
+
+option go_package = "github.com/theobmgit/shared-protos/gen/go/expense/v1;expensev1";
+option php_namespace = "Expense\\V1";
+option php_metadata_namespace = "Expense\\V1\\GPBMetadata";
+option csharp_namespace = "Expense.V1";
+option java_package = "com.expense.v1";
+option java_multiple_files = true;
+option objc_class_prefix = "EXP";
+
+service ExpenseService {
+  rpc BulkImport(BulkImportRequest) returns (BulkImportResponse);
+  rpc ConvertCurrency(ConvertRequest) returns (ConvertResponse);
+}
+
+message BulkImportRequest {
+  string file_path = 1;
+  int32 user_id = 2;
+  bool skip_duplicates = 3;
+}
+
+message BulkImportResponse {
+  int32 total = 1;
+  int32 success = 2;
+  int32 failed = 3;
+  repeated string errors = 4;
+}
+
+message ConvertRequest {
+  double amount = 1;
+  string from_currency = 2;
+  string to_currency = 3;
+}
+
+message ConvertResponse {
+  double converted_amount = 1;
+  double exchange_rate = 2;
+  string date = 3;
+}
+
+

@@ -1,0 +1,14 @@
+{
+  "name": "@expensetracker/shared-protos",
+  "version": "1.0.0",
+  "description": "Shared Protocol Buffer definitions for Expense Tracker services",
+  "main": "proto/expense/v1/expense_service.proto",
+  "files": [
+    "proto/**/*.proto"
+  ],
+  "peerDependencies": {
+    "@grpc/grpc-js": "^1.9.0",
+    "@grpc/proto-loader": "^0.7.0"
+  }
+}
+

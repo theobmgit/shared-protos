@@ -1,0 +1,12 @@
+{
+  "name": "expensetracker/shared-protos",
+  "type": "library",
+  "description": "Shared Protocol Buffer definitions for Expense Tracker services",
+  "require": {
+    "php": ">=8.0",
+    "google/protobuf": "^3.25"
+  },
+  "autoload": {},
+  "minimum-stability": "stable"
+}
+

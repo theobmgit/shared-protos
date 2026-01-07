@@ -13,6 +13,7 @@ option objc_class_prefix = "EXP";
 service ExpenseService {
   rpc BulkImport(BulkImportRequest) returns (BulkImportResponse);
   rpc ConvertCurrency(ConvertRequest) returns (ConvertResponse);
+  rpc HealthCheck(HealthRequest) returns (HealthResponse);
 }
 
 message BulkImportRequest {
@@ -26,6 +27,7 @@ message BulkImportResponse {
   int32 success = 2;
   int32 failed = 3;
   repeated string errors = 4;
+  int64 duration_ms = 5;
 }
 
 message ConvertRequest {
@@ -40,4 +42,10 @@ message ConvertResponse {
   string date = 3;
 }
 
+message HealthRequest {}
 
+message HealthResponse {
+  bool healthy = 1;
+  string database_status = 2;
+  int32 active_threads = 3;
+}
